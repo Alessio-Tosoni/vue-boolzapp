@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Boolzapp</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://unpkg.com/vue@3.3.8/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="wrapper">
+            <!-- COLONNA DI SINISTRA -->
+            <div class="container-contatti w30 bg-wht  mt-30">
+                <!-- HEADER SX -->
+                <div class="header-contatti flex jc-sb ai-cen py-12 bor-blk">
+                    <div class="flex ai-cen ml-12">
+                        <img class="bor-c w10 " src="./img/avatar_io.jpg" alt="">
+                        <p class="pl-8">Sofia</p>
+                    </div>
+                    <i class="fa-solid fa-circle-notch fa-lg" style="color: #b1b4b9;"></i>
+                    <i class="fa-solid fa-message fa-lg po-12" style="color: #b1b4b9;"></i>
+                    <i class="fa-solid fa-ellipsis-vertical fa-lg po-12" style="color: #b1b4b9;"></i>
+                </div>
+                <!-- SEZ. NOTIFICHE -->
+                <div class="notifiche flex ai-cen bor-blk">
+                    <div class="bell bor-c bg-wht flex ai-cen jc-cen mo-12">
+                        <i class="fa-solid fa-bell fa-xl" style="color: #25b6f4;"></i>
+                    </div>
+                    <div class="flex clmn jc-cen">
+                        <p class="fw-7">Ricevi notifiche di nuovi messaggi</p>
+                        <p class="c-gry txt-u">Attiva notifiche desktop</p>
+                    </div>
+                </div>
+                <!--SEARCH BAR IMPROVVISATA-->
+                <div class="search-bar flex jc-cen ai-cen py-8 bor-blk">
+                    <input class="w85" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <button>Cerca</button>
+                </div>
+                <!-- CONTATTI -->
+                <div class="flex clmn" id="listaContatti">
+                    
+                    <div class="contatto flex ai-cen jc-cen bor-blk bg-lgr " v-for="conversazione in contacts">
+                        <div class="flex ai-cen jc-cen">
+                            <div class="flex">
+                                <img class="bor-c w10" :src="conversazione.avatar" alt="">
+                                <div class="flex clmn ml-12 mr-20">
+                                    <p id="nome" class="fw-7">{{ conversazione.name }}</p>
+                                    <p class="c-gry">Ultimo messaggio inviato</p>
+                                </div>
+                            </div>  
+                            <div class="ora">12:00</div>
+                        </div>
+                            
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- COLONNA DI DESTRA -->
+            <div class="container-chat w70 bg-wht mt-30">
+                <div class="chat" >
+                    <div v-for="messaggi in contacts" v-bind:class="messaggi.status">{{ messages.message }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script> 
+</body>
+</html>
+
+           
+                    
+            
+
+            
+
+
