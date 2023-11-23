@@ -84,7 +84,7 @@
                     <div id="footer-chat" class="flex jc-sb ai-cen">
                         <div id="emoji" class="w10 mr-12">prova</div>
                         <div id="testo" class="w80">
-                            <input id="testoNuovo" class="w100"  type="text" :@keyup.enter="nuovoMessaggio(index)">
+                            <input id="testoNuovo" class="w100"  type="text" @keyup.enter="nuovoMessaggio(), nuovaRisposta()">
                         </div>
                         <div id="vocali" class="w10 ml-12">prova</div>
 
@@ -101,7 +101,7 @@
 </html>
 
            
-                    
+
             
 
             

@@ -175,16 +175,31 @@ createApp({
         cambiaChat(index){
             this.chatActive = index
         },
+        
+        
         nuovoMessaggio(index){
-    
+            
             let nuovaDate = new Date()
             let nuovaChat = {
                 date: nuovaDate.toLocaleString(),
-                message: document.getElementById("testoNuovo"),
+                message: document.getElementById("testoNuovo").value,
                 status:'sent'
             }
-            this.contacts[index].messages.push(nuovaChat)
-        }
+            this.contacts[this.chatActive].messages.push(nuovaChat)
+            
+        },
+        nuovaRisposta(index){
+    
+            setTimeout(() =>{
+                let nuovaDate1 = new Date()
+                let nuovaRisposta = {
+                    date: nuovaDate1.toLocaleString(),
+                    message: "ok",
+                    status:'received'
+                }
+                this.contacts[this.chatActive].messages.push(nuovaRisposta)
+            },2000)
+        },
     },
     mounted(){
 
