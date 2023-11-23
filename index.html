@@ -60,8 +60,12 @@
             </div>
             <!-- COLONNA DI DESTRA -->
             <div class="container-chat w70 bg-wht mt-30">
-                <div class="chat" >
-                    <div v-for="messaggi in contacts" v-bind:class="messaggi.status">{{ messages.message }}</div>
+                <div class="chat" v-for="messaggio in contacts" >
+                     
+                    <div :class="message.contacts.messages.status">
+                        <p>{{contacts.messages.message}}</p>
+                    </div>
+                    
                 </div>
             </div>
         </div>

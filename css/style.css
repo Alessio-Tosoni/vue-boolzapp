@@ -30,8 +30,12 @@ body{
 
 .ricevuti{
 background: blue;
+display: flex;
+justify-content: start;
 }
 .mandati{
     background: crimson;
+    display: flex;
+    justify-content: end;
 }
 .active{display: block;}
