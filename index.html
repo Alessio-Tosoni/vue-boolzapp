@@ -61,10 +61,14 @@
             <!-- COLONNA DI DESTRA -->
             <div class="container-chat w70 bg-wht mt-30">
                 <div class="chat" v-for="messaggio in contacts" >
-                     
-                    <div :class="message.contacts.messages.status">
+                     <div>
+                        <p v-for="messaggio in this.contacts[0].messages">
+                             {{messaggio.message}}
+                        </p>
+                     </div>
+                    <!-- <div :class="message.contacts.messages.status">
                         <p>{{contacts.messages.message}}</p>
-                    </div>
+                    </div> -->
                     
                 </div>
             </div>

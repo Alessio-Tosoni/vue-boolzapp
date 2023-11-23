@@ -2,7 +2,7 @@ const { createApp } = Vue
 createApp({
     data(){
         return{
-
+            chatActive : 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -170,9 +170,9 @@ createApp({
         }
     },
     Methods: {
-        isRicevuto(status){status == "received" ? true:false}
+    
     },
     mounted(){
-
+        
     }
 }).mount('#app')
