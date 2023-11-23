@@ -42,7 +42,7 @@
                 <!-- CONTATTI -->
                 <div class="flex clmn" id="listaContatti">
                     
-                    <div class="contatto flex ai-cen jc-cen bor-blk bg-lgr " v-for="conversazione in contacts">
+                    <div class="contatto flex ai-cen jc-cen bor-blk bg-lgr " v-for="(conversazione,index) in contacts" @click="cambiaChat(index)">
                         <div class="flex ai-cen jc-cen">
                             <div class="flex">
                                 <img class="bor-c w10" :src="conversazione.avatar" alt="">
@@ -60,15 +60,36 @@
             </div>
             <!-- COLONNA DI DESTRA -->
             <div class="container-chat w70 bg-wht mt-30">
-                <div class="chat" v-for="messaggio in contacts" >
-                     <div>
-                        <p v-for="messaggio in this.contacts[0].messages">
-                             {{messaggio.message}}
+                <div class="chat" >
+                    <div>
+                        <div class="header-contatti flex jc-sb ai-cen py-12 bor-blk">
+                            <div class="flex ai-cen ml-12">
+                                <!-- HEADER CHAT ATTIVA -->
+                               
+                                    <img class="bor-c w10 " :src="contacts[chatActive].avatar" alt="">
+                                    <p class="pl-8">{{contacts[chatActive].name}}</p>
+                                
+                            </div>
+                            <i class="fa-solid fa-circle-notch fa-lg" style="color: #b1b4b9;"></i>
+                            <i class="fa-solid fa-message fa-lg po-12" style="color: #b1b4b9;"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-lg po-12" style="color: #b1b4b9;"></i>
+                        </div>
+                    </div>
+                        <!-- da  sistemare background -->
+                    <div class="conversazioneAttiva">
+                        <p v-for="messaggio in this.contacts[chatActive].messages">
+                             {{messaggio.date}}: {{messaggio.message}}
                         </p>
-                     </div>
-                    <!-- <div :class="message.contacts.messages.status">
-                        <p>{{contacts.messages.message}}</p>
-                    </div> -->
+                    </div>
+                    <div id="footer-chat" class="flex jc-sb ai-cen">
+                        <div id="emoji" class="w10 mr-12">prova</div>
+                        <div id="testo" class="w80">
+                            <input id="testoNuovo" class="w100"  type="text" :@keyup.enter="nuovoMessaggio(index)">
+                        </div>
+                        <div id="vocali" class="w10 ml-12">prova</div>
+
+                    </div>
+                    
                     
                 </div>
             </div>

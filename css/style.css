@@ -38,4 +38,7 @@ justify-content: start;
     display: flex;
     justify-content: end;
 }
-.active{display: block;}
+.conversazioneAttiva{
+    background-image: url(/img/mine.jpg);
+    min-height: 360px;
+}

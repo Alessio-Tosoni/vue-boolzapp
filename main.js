@@ -2,6 +2,7 @@ const { createApp } = Vue
 createApp({
     data(){
         return{
+            
             chatActive : 0,
             contacts: [
                 {
@@ -169,10 +170,23 @@ createApp({
             
         }
     },
-    Methods: {
+    methods: {
+
+        cambiaChat(index){
+            this.chatActive = index
+        },
+        nuovoMessaggio(index){
     
+            let nuovaDate = new Date()
+            let nuovaChat = {
+                date: nuovaDate.toLocaleString(),
+                message: document.getElementById("testoNuovo"),
+                status:'sent'
+            }
+            this.contacts[index].messages.push(nuovaChat)
+        }
     },
     mounted(){
-        
+
     }
 }).mount('#app')
