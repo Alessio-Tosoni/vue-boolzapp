@@ -11,6 +11,9 @@ body{
 #wrapper{
    display: flex;
    flex-wrap: wrap;
+   width: 70%;
+   margin: 30px auto;
+   height: 55vh;
 }
 
 
@@ -26,6 +29,8 @@ body{
    width: 40px;
 }
 
+.contatto{min-height: 70px;}
+
 .ora{margin-right: 12px;}
 
 .ricevuti{
@@ -40,5 +45,7 @@ justify-content: start;
 }
 .conversazioneAttiva{
     background-image: url(/img/mine.jpg);
-    min-height: 360px;
+    min-height: 608px;
+    overflow-y: auto;
 }
+#footer-chat{background: #F3EEEA;}
